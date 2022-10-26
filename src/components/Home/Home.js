@@ -14,6 +14,7 @@ const Home = () => {
         <img
           className="rounded-lg"
           src="https://res.cloudinary.com/dc9bjecdl/image/upload/v1666792826/Assignment%2011/3gjbeg830gnu43sxz7et_acnx4u.webp"
+          alt="pic"
         ></img>
       </div>
     </div>
