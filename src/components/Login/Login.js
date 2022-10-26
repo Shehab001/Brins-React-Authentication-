@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
   return (
     <div className="form mt-20">
-      <h1 className="text-4xl text-white m-10">Log In Form</h1>
-      <form>
+      <h1 className="text-4xl underline text-white m-10">Log In Form</h1>
+      <form className="pb-20">
         <div className="mb-6">
           <label
             htmlFor="email"
@@ -55,6 +56,10 @@ const Login = () => {
             Remember me
           </label>
         </div>
+        <p className="text-white my-5">
+          <small className="mr-5">Don't have an account?</small>
+          <Link to="/signup"> Sign Up</Link>
+        </p>
         <button
           type="submit"
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-1/2 sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -62,13 +67,6 @@ const Login = () => {
           Submit
         </button>
       </form>
-      {/* <>
-        <small>Create an account.</small>
-        <Link to="/"> Sign Up</Link>
-        <Link onClick={forgetPass}>
-          <p>Forget Password?</p>
-        </Link>
-      </> */}
     </div>
   );
 };

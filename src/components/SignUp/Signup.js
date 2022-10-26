@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Signup.css";
 // import { Link } from "react-router-dom";
 // import app from "../Firebase/Firebase.init";
@@ -59,7 +60,7 @@ const Signup = () => {
   //   };
   return (
     <div className="form">
-      <h1 className="text-4xl m-10 text-white">Sign Up Form</h1>
+      <h1 className="text-4xl m-10 text-white underline">Sign Up Form</h1>
       {/* onSubmit={handleForm} */}
       <form>
         <div className="mb-6">
@@ -67,14 +68,14 @@ const Signup = () => {
             htmlFor="name"
             className="text-left block mb-2 text-sm font-medium text-white dark:text-gray-300"
           >
-            Your Name
+            Your Full Name
           </label>
           <input
             type="text"
             id="name"
             name="nam"
             className="bg-gray-50 border w-80 border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@......com"
+            placeholder="Full Name"
             required
           ></input>
         </div>
@@ -110,6 +111,22 @@ const Signup = () => {
             required
           ></input>
         </div>
+        <div className="mb-6">
+          <label
+            htmlFor="name"
+            className="text-left block mb-2 text-sm font-medium text-white dark:text-gray-300"
+          >
+            Image Url
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="url"
+            className="bg-gray-50 border w-80 border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Image Url"
+            required
+          ></input>
+        </div>
         <div className="flex items-start mb-6">
           <div className="flex items-center h-5">
             <input
@@ -127,9 +144,9 @@ const Signup = () => {
             Remember me
           </label>
         </div>
-        <p className="text-left text-white mb-5">
-          <small>Already Have an account.</small>
-          {/* <Link to="login"> Log In</Link> */}
+        <p className=" text-white mb-5">
+          <small className="mr-5">Already Have an account?</small>
+          <Link to="/login"> Log In</Link>
         </p>
         <button
           type="submit"

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Item = () => {
+const Courses = () => {
   return (
     <div>
       <section className="dark:bg-gray-900">
@@ -188,4 +188,4 @@ const Item = () => {
   );
 };
 
-export default Item;
+export default Courses;
