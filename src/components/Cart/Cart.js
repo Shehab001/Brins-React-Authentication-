@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
 
-const Cart = (props) => {
+const Cart = () => {
   const { user, course } = useContext(AuthContext);
   console.log({ user });
   const calculate = () => {

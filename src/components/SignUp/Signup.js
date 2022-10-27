@@ -12,7 +12,7 @@ import app from "../../firebase/Firebase.config";
 import { AuthContext } from "../../Context/Context";
 
 const Signup = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
@@ -26,9 +26,12 @@ const Signup = () => {
     setSuccess(false);
 
     const form = event.target;
+
+    const nam = form.nam.value;
     const name = form.email.value;
     const pass = form.password.value;
-    //console.log(name, pass);
+    const url = form.url.value;
+    //console.log(name, pass, nam, url);
 
     if (pass.length < 6) {
       setError("Password should be 6 characters or more.");
@@ -45,12 +48,24 @@ const Signup = () => {
         form.reset();
         setError("");
         navigate(from, { replace: true });
+        handleUpdateUserProfile(nam, url);
       })
       .catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage);
         // ..
       });
+  };
+
+  const handleUpdateUserProfile = (nam, url) => {
+    const profile = {
+      displayName: nam,
+      photoURL: url,
+    };
+    console.log(profile);
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((error) => console.error(error));
   };
 
   return (
