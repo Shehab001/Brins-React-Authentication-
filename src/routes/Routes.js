@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         path: "/category/:id",
         element: <Card></Card>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://brins-server.vercel.app/category/${params.id}`),
       },
       {
         path: "*",

@@ -7,13 +7,13 @@ const Courses = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://brins-server.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
   // console.log(categories);
   useEffect(() => {
-    fetch("http://localhost:5000/news")
+    fetch("https://brins-server.vercel.app/news")
       .then((res) => res.json())
       .then((data) => setNews(data));
   }, []);
