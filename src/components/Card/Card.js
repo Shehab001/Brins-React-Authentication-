@@ -1,9 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Card = () => {
   const data = useLoaderData();
-  // console.log(data[0]);
+  //console.log(data[0]);
 
   return (
     <>
@@ -16,7 +16,7 @@ const Card = () => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="currentColor"
             className="w-8 h-8 mx-auto mt-5 cursor-pointer"
           >
@@ -52,9 +52,10 @@ const Card = () => {
             <p className="font-bold">Author Name : {data[0].author.name}</p>
             <p className="font-bold">Duration : {data[0].author.Duration}</p>
             <p className="font-bold">Total Taken : {data[0].total_taken}</p>
+            <p className="font-bold">Price : ${data[0].price}</p>
 
-            <a
-              href="/"
+            <Link
+              to="/cart"
               className="inline-flex items-center py-2 my-5 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Get Premium Access
@@ -71,7 +72,7 @@ const Card = () => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

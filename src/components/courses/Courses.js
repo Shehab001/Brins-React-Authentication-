@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Cart from "../../Cart/Cart";
 
 const Courses = () => {
   const [categories, setCategories] = useState([]);
@@ -16,6 +17,12 @@ const Courses = () => {
       .then((res) => res.json())
       .then((data) => setNews(data));
   }, []);
+
+  //console.log(news);
+  // const passCourse = (data) => {
+  //   console.log(data);
+  // };
+
   // console.log(news);
   //categories.map((data) => console.log(data));
   return (
@@ -72,7 +79,7 @@ const Courses = () => {
                       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         {data.title}
                       </p>
-                      <p className="mb-5 text-gray-900">
+                      <p className="mb-5 font-bold ">
                         <span className="mr-2 ">
                           Badge : {data.rating.badge}
                         </span>
@@ -81,10 +88,10 @@ const Courses = () => {
                         </span>
                       </p>
                       <Link
-                        to="#"
+                        to={`/category/${data.category_id}`}
                         className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                       >
-                        Add To Cart
+                        Know More
                         <svg
                           aria-hidden="true"
                           className="ml-2 -mr-1 w-4 h-4"

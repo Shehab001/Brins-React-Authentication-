@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Cart from "../Cart/Cart";
 import Blogs from "../components/Blogs/Blogs";
 import Card from "../components/Card/Card";
 import Courses from "../components/courses/Courses";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: "/cart",
+        element: <Cart></Cart>,
       },
       {
         path: "/category/:id",
