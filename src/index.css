@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: url(./images/banner.jpg);
-  background-size: 200vh 200vh;
+  background-size: 200vh 400vh;
 }
 
 code {
