@@ -1,8 +1,19 @@
-import React from "react";
+import { Button } from "flowbite-react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/Context";
 import "./Header.css";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  //console.log({ user });
+
+  const handleBtn = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
       <nav className=" mx-10 my-5 border-gray-200 dark:bg-gray-900">
@@ -15,31 +26,46 @@ const Header = () => {
             ></img>
           </Link>
           <div className="flex items-center ">
-            {/* <Link
-              to="/login"
-              className="mr-6 text-sm font-medium text-white hover:underline"
-            >
-              Log Out
-            </Link> */}
             <Link
-              to="/login"
-              className="mr-6 text-sm font-medium text-white hover:underline"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="mr-6 text-sm font-medium text-white hover:underline"
-            >
-              Sign Up
-            </Link>
-
-            <Link
-              to="/login"
+              to="/"
               className="mr-6 text-sm font-medium text-white hover:underline"
             >
               Theme
             </Link>
+
+            {user?.uid ? (
+              <>
+                <Link
+                  onClick={handleBtn}
+                  to="/login"
+                  className="mr-6 text-sm font-medium text-white hover:underline"
+                >
+                  Log Out
+                </Link>
+                <Link>
+                  <img
+                    src={user.photoURL}
+                    className="w-10 rounded-full"
+                    alt="profile"
+                  />
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/login"
+                  className="mr-6 text-sm font-medium text-white hover:underline"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  className="mr-6 text-sm font-medium text-white hover:underline"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>

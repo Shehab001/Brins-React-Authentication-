@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cart from "../Cart/Cart";
+import Cart from "../components/Cart/Cart";
 import Blogs from "../components/Blogs/Blogs";
 import Card from "../components/Card/Card";
 import Courses from "../components/courses/Courses";
@@ -9,6 +9,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Signup from "../components/SignUp/Signup";
 import Main from "../layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart></Cart>,
+        element: (
+          <PrivateRoute>
+            <Cart></Cart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/category/:id",

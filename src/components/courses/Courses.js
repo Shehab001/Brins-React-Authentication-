@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Cart from "../../Cart/Cart";
+import Cart from "../Cart/Cart";
 
 const Courses = () => {
   const [categories, setCategories] = useState([]);

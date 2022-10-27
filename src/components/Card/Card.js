@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Context/Context";
+import Cart from "../Cart/Cart";
 
 const Card = () => {
   const data = useLoaderData();
-  //console.log(data[0]);
+  const { course, setCourse } = useContext(AuthContext);
 
   return (
     <>
@@ -55,6 +57,7 @@ const Card = () => {
             <p className="font-bold">Price : ${data[0].price}</p>
 
             <Link
+              onClick={() => setCourse(data)}
               to="/cart"
               className="inline-flex items-center py-2 my-5 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
