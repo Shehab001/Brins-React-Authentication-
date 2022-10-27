@@ -29,7 +29,6 @@ const Header = () => {
             {theme === false ? (
               <Link
                 onClick={() => setTheme(true)}
-                to="/"
                 className="mr-6 text-sm font-medium text-white hover:underline"
               >
                 Dark
@@ -37,7 +36,6 @@ const Header = () => {
             ) : (
               <Link
                 onClick={() => setTheme(false)}
-                to="/"
                 className="mr-6 text-sm font-medium text-white hover:underline"
               >
                 Light

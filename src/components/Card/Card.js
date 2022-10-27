@@ -30,8 +30,8 @@ const Card = () => {
           </svg>
         </span>
       </div>
-      <div className="pb-10 pt-5 block w-4/12			 mx-auto pl-5">
-        <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div className="pb-10 pt-5		 mx-auto pl-5">
+        <div className="max-w-sm mx-auto bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <img
             className="rounded-t-lg"
             src={data[0].author.img}
