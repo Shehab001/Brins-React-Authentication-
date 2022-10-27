@@ -16,16 +16,21 @@ const auth = getAuth(app);
 const Context = ({ children }) => {
   const [user, setUser] = useState(null);
   const [course, setCourse] = useState(null);
+  const [theme, setTheme] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const providerLogin = (provider) => {
+    setLoading(true);
     return signInWithPopup(auth, provider);
   };
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -34,6 +39,7 @@ const Context = ({ children }) => {
   };
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -41,6 +47,7 @@ const Context = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("inside auth state change", currentUser);
       setUser(currentUser);
+      setLoading(false);
     });
 
     return () => {
@@ -57,6 +64,9 @@ const Context = ({ children }) => {
     course,
     setCourse,
     updateUserProfile,
+    loading,
+    theme,
+    setTheme,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/Context";
 import "./Header.css";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, theme, setTheme } = useContext(AuthContext);
   //console.log({ user });
 
   const handleBtn = () => {
@@ -26,13 +26,23 @@ const Header = () => {
             ></img>
           </Link>
           <div className="flex items-center ">
-            <Link
-              to="/"
-              className="mr-6 text-sm font-medium text-white hover:underline"
-            >
-              Theme
-            </Link>
-
+            {theme === false ? (
+              <Link
+                onClick={() => setTheme(true)}
+                to="/"
+                className="mr-6 text-sm font-medium text-white hover:underline"
+              >
+                Dark
+              </Link>
+            ) : (
+              <Link
+                onClick={() => setTheme(false)}
+                to="/"
+                className="mr-6 text-sm font-medium text-white hover:underline"
+              >
+                Light
+              </Link>
+            )}
             {user?.uid ? (
               <>
                 <Link

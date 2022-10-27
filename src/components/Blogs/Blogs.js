@@ -2,7 +2,11 @@ import React from "react";
 
 const Blogs = () => {
   return (
-    <div id="accordion-collapse" data-accordion="collapse" className="m-10 ">
+    <div
+      id="accordion-collapse"
+      data-accordion="collapse"
+      className="my-10 mx-20 "
+    >
       <h2 id="accordion-collapse-heading-1">
         <button
           type="button"
@@ -11,7 +15,7 @@ const Blogs = () => {
           aria-expanded="true"
           aria-controls="accordion-collapse-body-1"
         >
-          <span>What is Flowbite?</span>
+          <span>what is cors?</span>
           <svg
             data-accordion-icon
             className="w-6 h-6 rotate-180 shrink-0"
@@ -34,7 +38,15 @@ const Blogs = () => {
       >
         <div className="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is an open-source library of interactive
+            Cross-Origin Resource Sharing (CORS) is an HTTP-header based
+            mechanism that allows a server to indicate any origins (domain,
+            scheme, or port) other than its own from which a browser should
+            permit loading resources. CORS also relies on a mechanism by which
+            browsers make a "preflight" request to the server hosting the
+            cross-origin resource, in order to check that the server will permit
+            the actual request. In that preflight, the browser sends headers
+            that indicate the HTTP method and headers that will be used in the
+            actual request.
           </p>
         </div>
       </div>
@@ -47,7 +59,10 @@ const Blogs = () => {
           aria-expanded="true"
           aria-controls="accordion-collapse-body-1"
         >
-          <span>What is Flowbite?</span>
+          <span>
+            WWhy are you using firebase? What other options do you have to
+            implement authentication?
+          </span>
           <svg
             data-accordion-icon
             className="w-6 h-6 rotate-180 shrink-0"
@@ -70,7 +85,11 @@ const Blogs = () => {
       >
         <div className="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is an open-source library of interactive
+            The Firebase Realtime Database lets you build rich, collaborative
+            applications by allowing secure access to the database directly from
+            client-side code. Data is persisted locally, and even while offline,
+            realtime events continue to fire, giving the end user a responsive
+            experience.
           </p>
         </div>
       </div>
@@ -82,7 +101,7 @@ const Blogs = () => {
           aria-expanded="true"
           aria-controls="accordion-collapse-body-1"
         >
-          <span>What is Flowbite?</span>
+          <span>How does the private route work?</span>
           <svg
             data-accordion-icon
             className="w-6 h-6 rotate-180 shrink-0"
@@ -105,7 +124,11 @@ const Blogs = () => {
       >
         <div className="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is an open-source library of interactive
+            The private route component is similar to the public route, the only
+            change is that redirect URL and authenticate condition. If the user
+            is not authenticated he will be redirected to the login page and the
+            user can only access the authenticated routes If he is authenticated
+            (Logged in).
           </p>
         </div>
       </div>
@@ -117,7 +140,7 @@ const Blogs = () => {
           aria-expanded="true"
           aria-controls="accordion-collapse-body-1"
         >
-          <span>What is Flowbite?</span>
+          <span>What is Node? How does Node work?</span>
           <svg
             data-accordion-icon
             className="w-6 h-6 rotate-180 shrink-0"
@@ -140,7 +163,11 @@ const Blogs = () => {
       >
         <div className="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
           <p className="mb-2 text-gray-500 dark:text-gray-400">
-            Flowbite is an open-source library of interactive
+            It is a used as backend service where javascript works on the
+            server-side of the application. This way javascript is used on both
+            frontend and backend. Node. js runs on chrome v8 engine which
+            converts javascript code into machine code, it is highly scalable,
+            lightweight, fast, and data-intensive
           </p>
         </div>
       </div>

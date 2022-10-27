@@ -10,6 +10,7 @@ import Login from "../components/Login/Login";
 import Signup from "../components/SignUp/Signup";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
+import Success from "../Succesful/Success";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
+        path: "/purchase",
+        element: <Success></Success>,
+      },
+      {
         path: "/cart",
         element: (
           <PrivateRoute>
@@ -55,6 +60,10 @@ const router = createBrowserRouter([
         element: <Card></Card>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.id}`),
+      },
+      {
+        path: "*",
+        element: <h1 className="text-6xl text-center m-20">404 Not Found</h1>,
       },
     ],
   },

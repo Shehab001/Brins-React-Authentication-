@@ -4,7 +4,8 @@ import { AuthContext } from "../../Context/Context";
 
 const Cart = () => {
   const { user, course } = useContext(AuthContext);
-  console.log({ user });
+
+  // console.log(course);
   const calculate = () => {
     const a = parseInt(course[0].price) + 20 + 5;
     return a;
@@ -18,8 +19,8 @@ const Cart = () => {
 
         <h4 className="font-bold text-center ">Order Summary</h4>
         <hr className="border-3 border-black my-2"></hr>
-        <p className="font-bold">Selected Item: {course[0].name} Course</p>
-        <p className="font-bold">Price: ${course[0].price}</p>
+        <p className="font-bold">Selected Item: {course[0]?.name} Course</p>
+        <p className="font-bold">Price: ${course[0]?.price}</p>
         <p className="font-bold">Shipping Cost: $20</p>
         <p className="font-bold">Tax:$5 </p>
         <hr className="border-3 border-black my-2"></hr>
@@ -27,9 +28,13 @@ const Cart = () => {
         <p className="font-semibold">E-mail : {user?.email}</p>
         <hr className="border-3 border-black my-2"></hr>
         <h5 className="font-bold text-center "> Total:${calculate()} </h5>
+        <Link
+          className="font-bold p-1 border-2 text-black border-black"
+          to="/purchase"
+        >
+          Purchase
+        </Link>
       </Link>
-
-      {/* <button onClick={clearCart}>Clear Cart</button> */}
     </div>
   );
 };

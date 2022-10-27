@@ -18,13 +18,14 @@ const Login = () => {
   // // const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const googleProvider = new GoogleAuthProvider();
   const provider = new GithubAuthProvider();
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  //console.log(from);
 
   const handleBtn1 = () => {
     providerLogin(provider)
@@ -35,7 +36,7 @@ const Login = () => {
 
         // The signed-in user info.
         const user = result.user;
-        console.log(user);
+        //console.log(user);
         // setUser(user);
         navigate(from, { replace: true });
         // ...
@@ -87,7 +88,7 @@ const Login = () => {
         setSuccess(true);
         setError("");
         //setUser(user);
-        console.log(user);
+        // console.log(user);
         navigate(from, { replace: true });
       })
       .catch((error) => {
