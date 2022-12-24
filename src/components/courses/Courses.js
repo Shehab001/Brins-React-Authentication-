@@ -1,21 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
+import Loader from "../Loader";
 
 const Courses = () => {
   const [categories, setCategories] = useState([]);
   const [news, setNews] = useState([]);
+  const [spinn, setSpinn] = useState(false);
 
   useEffect(() => {
+    setSpinn(true);
     fetch("https://brins-server.vercel.app/categories")
       .then((res) => res.json())
-      .then((data) => setCategories(data));
+      .then((data) => {
+        setCategories(data);
+        setSpinn(false);
+      });
   }, []);
   // console.log(categories);
   useEffect(() => {
+    setSpinn(true);
     fetch("https://brins-server.vercel.app/news")
       .then((res) => res.json())
-      .then((data) => setNews(data));
+      .then((data) => {
+        setNews(data);
+        setSpinn(false);
+      });
   }, []);
 
   //console.log(news);
@@ -62,7 +72,11 @@ const Courses = () => {
                   </select>
                 </div>
               </div>
-
+              {spinn && (
+                <div className="w-96 mx-auto mt-20">
+                  <Loader></Loader>
+                </div>
+              )}
               <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
                 {news.map((data) => (
                   <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
